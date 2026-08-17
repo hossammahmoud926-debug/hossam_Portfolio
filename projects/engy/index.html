@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>د. إنجي زايد | العلاج الطبيعي والتأهيل</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Tajawal',sans-serif;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --green:#149b83;
+    --dark:#18343b;
+    --text:#34464b;
+    --light:#f5faf9;
+    --white:#ffffff;
+    --soft:#e8f5f2;
+}
+
+body{
+    background:var(--light);
+    color:var(--dark);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:absolute;
+    top:0;
+    right:0;
+    width:100%;
+    padding:25px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:100;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    color:var(--dark);
+}
+
+.logo span{
+    color:var(--green);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    color:var(--dark);
+    font-weight:700;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--green);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    padding:130px 8% 80px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:70px;
+
+    background:
+    radial-gradient(
+        circle at 80% 20%,
+        #d9f5ee 0,
+        transparent 35%
+    ),
+    #f5faf9;
+}
+
+.hero-text{
+    position:relative;
+    z-index:2;
+}
+
+.small-title{
+    color:var(--green);
+    font-size:17px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(45px,6vw,78px);
+    line-height:1.15;
+    font-weight:900;
+    color:var(--dark);
+}
+
+.hero h1 span{
+    color:var(--green);
+}
+
+.hero-description{
+    color:#66777b;
+    font-size:19px;
+    line-height:2;
+    max-width:600px;
+    margin:25px 0 35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.primary-btn{
+    background:var(--green);
+    color:#fff;
+    padding:15px 32px;
+    border-radius:50px;
+    font-weight:800;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(20,155,131,.2);
+}
+
+.primary-btn:hover{
+    transform:translateY(-5px);
+}
+
+.secondary-btn{
+    border:2px solid var(--green);
+    color:var(--green);
+    padding:13px 30px;
+    border-radius:50px;
+    font-weight:800;
+    transition:.3s;
+}
+
+.secondary-btn:hover{
+    background:var(--green);
+    color:#fff;
+}
+
+
+/* =========================
+   DOCTOR IMAGE
+========================= */
+
+.hero-image{
+    position:relative;
+    display:flex;
+    justify-content:center;
+}
+
+.doctor-frame{
+    width:min(480px,100%);
+    height:620px;
+    border-radius:240px 240px 35px 35px;
+    overflow:hidden;
+    position:relative;
+    background:#d8eee9;
+    box-shadow:0 30px 70px rgba(24,52,59,.15);
+}
+
+.doctor-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.image-badge{
+    position:absolute;
+    bottom:30px;
+    right:-20px;
+    background:#fff;
+    padding:18px 25px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+}
+
+.image-badge strong{
+    display:block;
+    color:var(--green);
+    font-size:22px;
+}
+
+.image-badge small{
+    color:#68777a;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section{
+    padding:110px 8%;
+    background:#fff;
+}
+
+.about-wrapper{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    position:relative;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:30px;
+    display:block;
+}
+
+.about-image::before{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    border:12px solid var(--soft);
+    border-radius:50%;
+    top:-30px;
+    right:-30px;
+    z-index:0;
+}
+
+.about-image img{
+    position:relative;
+    z-index:1;
+}
+
+.section-label{
+    color:var(--green);
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.section-title{
+    font-size:45px;
+    font-weight:900;
+    line-height:1.3;
+    margin-bottom:25px;
+}
+
+.section-title span{
+    color:var(--green);
+}
+
+.about-text{
+    color:#68777a;
+    line-height:2;
+    font-size:17px;
+}
+
+.about-points{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.point{
+    background:var(--light);
+    padding:18px;
+    border-radius:15px;
+    color:var(--dark);
+    font-weight:700;
+}
+
+.point span{
+    color:var(--green);
+    margin-left:8px;
+}
+
+
+/* =========================
+   SPECIALTIES
+========================= */
+
+.specialties{
+    padding:110px 8%;
+    background:var(--light);
+}
+
+.center-title{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 55px;
+}
+
+.center-title p{
+    color:#718084;
+    line-height:1.8;
+    margin-top:15px;
+}
+
+.specialty-grid{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.specialty{
+    background:#fff;
+    border-radius:25px;
+    overflow:hidden;
+    transition:.4s;
+    box-shadow:0 10px 30px rgba(24,52,59,.05);
+}
+
+.specialty:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 45px rgba(20,155,131,.12);
+}
+
+.specialty-image{
+    height:240px;
+    overflow:hidden;
+}
+
+.specialty-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.specialty:hover img{
+    transform:scale(1.08);
+}
+
+.specialty-content{
+    padding:25px;
+}
+
+.specialty-content h3{
+    font-size:21px;
+    margin-bottom:10px;
+}
+
+.specialty-content p{
+    color:#718084;
+    line-height:1.8;
+}
+
+
+/* =========================
+   VIDEOS
+========================= */
+
+.videos-section{
+    padding:110px 8%;
+    background:#18343b;
+    color:#fff;
+}
+
+.videos-title{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 55px;
+}
+
+.videos-title .section-label{
+    color:#58d7c0;
+}
+
+.videos-title h2{
+    font-size:45px;
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+.videos-title h2 span{
+    color:#58d7c0;
+}
+
+.videos-title p{
+    color:#b9c9cc;
+    line-height:1.9;
+}
+
+.video-grid{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.video-card{
+    background:#102a30;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.video-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.video-box{
+    width:100%;
+    aspect-ratio:16/10;
+    background:#07181d;
+}
+
+.video-box video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.video-info{
+    padding:22px;
+}
+
+.video-info h3{
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.video-info p{
+    color:#aebfc2;
+    line-height:1.7;
+    font-size:14px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-section{
+    padding:110px 8%;
+    background:#fff;
+}
+
+.gallery-grid{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:250px;
+    gap:15px;
+}
+
+.gallery-item{
+    overflow:hidden;
+    border-radius:20px;
+    position:relative;
+}
+
+.gallery-item:first-child{
+    grid-column:span 2;
+    grid-row:span 2;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+.gallery-caption{
+    position:absolute;
+    bottom:0;
+    right:0;
+    left:0;
+    padding:20px;
+    color:#fff;
+    font-weight:800;
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.75)
+    );
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section{
+    padding:100px 8%;
+    background:#f5faf9;
+    color:var(--dark);
+}
+
+.contact-wrapper{
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact-description{
+    color:#718084;
+    max-width:600px;
+    margin:0 auto 40px;
+    line-height:1.9;
+}
+
+.socials{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.social{
+    min-width:170px;
+    padding:17px 25px;
+    border-radius:50px;
+    color:#fff;
+    font-weight:800;
+    transition:.3s;
+}
+
+.social:hover{
+    transform:translateY(-5px);
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+.facebook{
+    background:#1877F2;
+}
+
+.phone{
+    background:var(--green);
+}
+
+.address{
+    margin-top:35px;
+    color:#718084;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#10262c;
+    color:#9aabad;
+    text-align:center;
+    padding:25px;
+}
+
+footer span{
+    color:#fff;
+    font-weight:700;
+}
+
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
+
+.whatsapp-float{
+    position:fixed;
+    left:25px;
+    bottom:25px;
+
+    width:62px;
+    height:62px;
+
+    border-radius:50%;
+
+    background:#25D366;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:30px;
+
+    z-index:999;
+
+    box-shadow:0 10px 30px rgba(37,211,102,.3);
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.1);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding-top:120px;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-image{
+        order:-1;
+    }
+
+    .doctor-frame{
+        height:520px;
+        width:370px;
+    }
+
+    .about-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .specialty-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .video-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:20px 5%;
+    }
+
+    .hero{
+        padding:110px 5% 70px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero-description{
+        font-size:16px;
+    }
+
+    .doctor-frame{
+        width:100%;
+        height:450px;
+        border-radius:200px 200px 30px 30px;
+    }
+
+    .image-badge{
+        right:10px;
+    }
+
+    .about-section,
+    .specialties,
+    .videos-section,
+    .gallery-section,
+    .contact-section{
+        padding:75px 5%;
+    }
+
+    .section-title,
+    .videos-title h2{
+        font-size:32px;
+    }
+
+    .about-points{
+        grid-template-columns:1fr;
+    }
+
+    .specialty-grid,
+    .video-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:180px;
+    }
+
+    .gallery-item:first-child{
+        grid-column:span 2;
+        grid-row:span 2;
+    }
+
+    .social{
+        width:100%;
+    }
+
+}
+.video-box{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.video-box video{
+    width:100%;
+    height: 250px; /* ثبتنا الارتفاع */
+    object-fit: contain;
+    background:#000;
+    border-radius:15px;
+    flex-shrink: 0;
+}
+
+.video-box h3, .video-box p{
+    flex-grow: 1; /* عشان النص ياخد باقي المساحة */
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        د. إنجي <span>زايد</span>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#home">الرئيسية</a>
+
+        <a href="#about">عن الدكتورة</a>
+
+        <a href="#specialties">التخصصات</a>
+
+        <a href="#videos">الحالات والفيديوهات</a>
+
+        <a href="#gallery">الصور</a>
+
+        <a href="#contact">تواصل</a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <div class="small-title">
+            أخصائية العلاج الطبيعي والتأهيل
+        </div>
+
+        <h1>
+            د. إنجي
+            <span>زايد</span>
+        </h1>
+
+        <p class="hero-description">
+            نساعدك على استعادة حركتك،
+            تقليل الألم، والعودة لحياتك الطبيعية
+            من خلال برامج علاج وتأهيل مصممة خصيصًا لحالتك.
+        </p>
+
+        <div class="hero-buttons">
+
+            <!-- زر الحجز - يفتح واتساب مباشرة -->
+
+            <a
+                href="https://wa.me/201275948488?text=السلام%20عليكم،%20أريد%20حجز%20موعد%20مع%20د.%20إنجي%20زايد"
+                target="_blank"
+                class="primary-btn"
+            >
+                احجز موعدك
+            </a>
+
+            <a
+                href="#videos"
+                class="secondary-btn"
+            >
+                شاهد الحالات
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <div class="doctor-frame">
+
+            <!-- صورة الدكتورة -->
+
+            <img
+                src="photo_2026-08-14_19-28-59.jpg"
+                alt="د. إنجي زايد"
+            >
+
+            <div class="image-badge">
+
+                <strong>
+                    د. إنجي زايد
+                </strong>
+
+                <small>
+                    علاج طبيعي وتأهيل
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about-section" id="about">
+
+    <div class="about-wrapper">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=900"
+                alt="العلاج الطبيعي"
+            >
+
+        </div>
+
+
+        <div>
+
+            <div class="section-label">
+                تعرفي علينا
+            </div>
+
+            <h2 class="section-title">
+                علاجك يبدأ
+                <span>بخطوة</span>
+            </h2>
+
+            <p class="about-text">
+
+                في مركز د. إنجي زايد للعلاج الطبيعي والتأهيل،
+                نهتم بفهم حالتك بشكل كامل ووضع خطة علاج مناسبة
+                تساعدك على استعادة الحركة وتحسين جودة حياتك.
+
+                <br><br>
+
+                نركز على العلاج الشخصي والمتابعة المستمرة
+                للوصول إلى أفضل نتيجة ممكنة.
+
+            </p>
+
+
+            <div class="about-points">
+
+                <div class="point">
+                    <span>✓</span>
+                    خطة علاج مخصصة
+                </div>
+
+                <div class="point">
+                    <span>✓</span>
+                    متابعة مستمرة
+                </div>
+
+                <div class="point">
+                    <span>✓</span>
+                    تأهيل متكامل
+                </div>
+
+                <div class="point">
+                    <span>✓</span>
+                    أجهزة وتقنيات حديثة
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SPECIALTIES
+========================= -->
+
+<section class="specialties" id="specialties">
+
+    <div class="center-title">
+
+        <div class="section-label">
+            تخصصاتنا
+        </div>
+
+        <h2 class="section-title">
+            خدمات مصممة
+            <span>لحركتك</span>
+        </h2>
+
+        <p>
+            مجموعة من برامج العلاج الطبيعي والتأهيل
+            لمساعدتك على العودة لنشاطك وحياتك اليومية.
+        </p>
+
+    </div>
+
+
+    <div class="specialty-grid">
+
+
+        <div class="specialty">
+
+            <div class="specialty-image">
+
+                <img
+                    src="الظهر.jpg"
+                    alt="آلام الظهر والرقبة"
+                >
+
+            </div>
+
+            <div class="specialty-content">
+
+                <h3>
+                    آلام الظهر والرقبة
+                </h3>
+
+                <p>
+                    برامج علاج وتأهيل للمساعدة على
+                    تقليل الألم وتحسين الحركة.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="specialty">
+
+            <div class="specialty-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=900"
+                    alt="التأهيل الرياضي"
+                >
+
+            </div>
+
+            <div class="specialty-content">
+
+                <h3>
+                    التأهيل الرياضي
+                </h3>
+
+                <p>
+                    تأهيل الإصابات الرياضية والعودة
+                    للنشاط بشكل تدريجي وآمن.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="specialty">
+
+            <div class="specialty-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=900"
+                    alt="التمارين العلاجية"
+                >
+
+            </div>
+
+            <div class="specialty-content">
+
+                <h3>
+                    التمارين العلاجية
+                </h3>
+
+                <p>
+                    تمارين مخصصة لتحسين القوة والمرونة
+                    والتوازن والحركة.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VIDEOS / CASES
+========================= -->
+
+<section class="videos-section" id="videos">
+
+    <div class="videos-title">
+
+        <div class="section-label">
+            من واقع العمل
+        </div>
+
+        <h2>
+            حالات وجلسات
+            <span>العلاج</span>
+        </h2>
+
+        <p>
+            هنا يمكنك إضافة فيديوهات حقيقية من جلسات العلاج
+            والتأهيل والحالات التي تم التعامل معها داخل المركز.
+        </p>
+
+    </div>
+
+
+    <div class="video-grid">
+
+
+        <!-- الفيديو الأول -->
+
+        <div class="video-card">
+
+            <div class="video-box">
+
+                <video
+                    controls
+                    playsinline
+                    preload="metadata"
+                >
+
+                    <source
+                        src="video_2026-08-14_20-32-29 copy.mp4"
+                        type="video/mp4"
+                    >
+
+                    المتصفح لا يدعم تشغيل الفيديو.
+
+                </video>
+
+            </div>
+
+            <div class="video-info">
+
+                <h3>
+                    أول حالة علاج
+                </h3>
+
+                <p>
+                    فيديو من جلسة علاج وتأهيل حقيقية.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- الفيديو الثاني -->
+
+        <div class="video-card">
+
+            <div class="video-box">
+
+                <video
+                    controls
+                    playsinline
+                    preload="metadata"
+                >
+
+                    <source
+                        src="في.mp4"
+                        type="video/mp4"
+                    >
+
+                    المتصفح لا يدعم تشغيل الفيديو.
+
+                </video>
+
+            </div>
+
+            <div class="video-info">
+
+                <h3>
+                    جلسة تأهيل
+                </h3>
+
+                <p>
+                    أضف هنا فيديو من جلسات العلاج الطبيعي.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- الفيديو الثالث -->
+
+        <div class="video-card">
+
+            <div class="video-box">
+
+                <video
+                    controls
+                    playsinline
+                    preload="metadata"
+                >
+
+                    <source
+                        src="حاله.mp4"
+                        type="video/mp4"
+                    >
+
+                    المتصفح لا يدعم تشغيل الفيديو.
+
+                </video>
+
+            </div>
+
+            <div class="video-info">
+
+                <h3>
+                    حالة جديدة
+                </h3>
+
+                <p>
+                    أضف فيديو لحالة أو تمرين علاجي جديد.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section class="gallery-section" id="gallery">
+
+    <div class="center-title">
+
+        <div class="section-label">
+            من داخل المركز
+        </div>
+
+        <h2 class="section-title">
+            العلاج
+            <span>بشكل مختلف</span>
+        </h2>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+
+        <div class="gallery-item">
+
+            <img
+                src="جلسات.jpg"
+                alt="جلسة علاج طبيعي"
+            >
+
+            <div class="gallery-caption">
+                جلسات العلاج الطبيعي
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="تاهيل.jpg"
+                alt="تأهيل"
+            >
+
+            <div class="gallery-caption">
+                التأهيل الحركي
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="رعايه.jpg"
+                alt="علاج"
+            >
+
+            <div class="gallery-caption">
+                رعاية ومتابعة
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="تمارين.jpg"
+                alt="تمارين علاجية"
+            >
+
+            <div class="gallery-caption">
+                تمارين علاجية
+            </div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="است.jpg"
+                alt="علاج طبيعي"
+            >
+
+            <div class="gallery-caption">
+                تأهيل واستعادة الحركة
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact-section" id="contact">
+
+    <div class="contact-wrapper">
+
+        <div class="section-label">
+            تواصل معنا
+        </div>
+
+        <h2 class="section-title">
+            مستعدين
+            <span>نساعدك</span>
+        </h2>
+
+        <p class="contact-description">
+
+            لو عندك أي استفسار أو حابب تحجز موعد،
+            تواصل معنا مباشرة من خلال وسائل التواصل التالية.
+
+        </p>
+
+
+        <div class="socials">
+
+            <!-- واتساب -->
+
+            <a
+                href="https://wa.me/201275948488?text=السلام%20عليكم،%20أريد%20حجز%20موعد%20مع%20د.%20إنجي%20زايد"
+                target="_blank"
+                class="social whatsapp"
+            >
+                <i class="fab fa-whatsapp"></i> واتساب
+            </a>
+
+
+            <!-- فيسبوك -->
+
+            <a
+                href="https://www.facebook.com/share/1BpjorT8eg/"
+                target="_blank"
+                class="social facebook"
+            >
+                f فيسبوك
+            </a>
+
+
+            <!-- اتصال -->
+
+            <a
+                href="tel:+201275948488"
+                class="social phone"
+            >
+                📞 اتصل بنا
+            </a>
+
+        </div>
+
+
+        <div class="address">
+
+            📍 44 شارع الهرم الرئيسي،
+            الدور الثاني،
+            فوق بنك التجاري وفا، الجيزة
+
+            <br><br>
+
+            
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026
+        <span>د. إنجي زايد</span>
+        — أخصائية العلاج الطبيعي والتأهيل
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
+
+<a
+    href="https://wa.me/201275948488?text=السلام%20عليكم،%20أريد%20حجز%20موعد%20مع%20د.%20إنجي%20زايد"
+    target="_blank"
+    class="whatsapp-float"
+>
+    💬
+</a>
+
+
+</body>
+</html>

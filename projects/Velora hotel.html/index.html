@@ -1,0 +1,900 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VELORA | Luxury Hotel</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#0b0b0b;
+    color:white;
+}
+
+/* NAVBAR */
+
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:25px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:10;
+    background:linear-gradient(rgba(0,0,0,.7),transparent);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    letter-spacing:4px;
+}
+
+.logo span{
+    color:#d4af37;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:30px;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    padding:0 7%;
+    position:relative;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.25)),
+    url("https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1600")
+    center/cover;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero small{
+    color:#d4af37;
+    letter-spacing:5px;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:clamp(50px,8vw,100px);
+    line-height:.95;
+    margin:20px 0;
+}
+
+.hero p{
+    color:#ddd;
+    font-size:18px;
+    line-height:1.7;
+    max-width:600px;
+}
+
+.hero-btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 30px;
+    background:#d4af37;
+    color:#111;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+/* BOOKING */
+
+.booking{
+    position:absolute;
+    bottom:35px;
+    left:7%;
+    right:7%;
+    background:rgba(15,15,15,.9);
+    backdrop-filter:blur(15px);
+    padding:20px;
+    border:1px solid #333;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.booking label{
+    display:block;
+    color:#aaa;
+    font-size:12px;
+    margin-bottom:7px;
+}
+
+.booking input,
+.booking select{
+    width:100%;
+    padding:13px;
+    background:#1b1b1b;
+    color:white;
+    border:1px solid #333;
+    border-radius:5px;
+}
+
+.booking button{
+    background:#d4af37;
+    border:0;
+    cursor:pointer;
+    font-weight:bold;
+    border-radius:5px;
+}
+
+/* SECTION */
+
+.section{
+    padding:90px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title small{
+    color:#d4af37;
+    letter-spacing:4px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-top:12px;
+}
+
+/* ROOMS */
+
+.rooms{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.room{
+    background:#151515;
+    border:1px solid #262626;
+    overflow:hidden;
+    transition:.4s;
+    cursor:pointer;
+}
+
+.room:hover{
+    transform:translateY(-10px);
+    border-color:#d4af37;
+}
+
+.room-img{
+    height:260px;
+    overflow:hidden;
+}
+
+.room-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.room:hover img{
+    transform:scale(1.08);
+}
+
+.room-info{
+    padding:22px;
+}
+
+.room-info h3{
+    font-size:23px;
+    margin-bottom:10px;
+}
+
+.room-info p{
+    color:#888;
+    line-height:1.6;
+}
+
+.price{
+    margin-top:18px;
+    color:#d4af37;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.details-btn{
+    display:block;
+    margin-top:15px;
+    padding:12px;
+    text-align:center;
+    background:#222;
+    color:white;
+    border:1px solid #333;
+    cursor:pointer;
+}
+
+.details-btn:hover{
+    background:#d4af37;
+    color:#111;
+}
+
+/* EXPERIENCE */
+
+.experience{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.experience img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+}
+
+.experience-text small{
+    color:#d4af37;
+    letter-spacing:4px;
+}
+
+.experience-text h2{
+    font-size:45px;
+    margin:20px 0;
+}
+
+.experience-text p{
+    color:#999;
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+ .feature{
+    padding:20px;
+    background:#151515;
+    border:1px solid #252525;
+}
+
+.feature span{
+    color:#d4af37;
+    font-size:25px;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    grid-auto-rows:220px;
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    opacity:.75;
+}
+
+.gallery img:first-child{
+    grid-row:span 2;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.94);
+    z-index:100;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    background:#151515;
+    width:90%;
+    max-width:600px;
+    padding:30px;
+    border:1px solid #444;
+    position:relative;
+}
+
+.modal-box img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    margin-bottom:20px;
+}
+
+.modal-box h2{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.modal-box p{
+    color:#aaa;
+    line-height:1.7;
+}
+
+.close{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.close:hover{
+    color:#d4af37;
+}
+
+.book-now{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    background:#d4af37;
+    border:0;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    border-top:1px solid #222;
+    color:#666;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    nav{
+        display:none;
+    }
+
+    .booking{
+        position:relative;
+        left:auto;
+        right:auto;
+        bottom:auto;
+        margin:20px;
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        min-height:850px;
+        align-items:flex-start;
+        padding-top:150px;
+    }
+
+    .experience{
+        grid-template-columns:1fr;
+    }
+
+    .experience img{
+        height:350px;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:180px;
+    }
+
+    .gallery img:first-child{
+        grid-row:span 1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        VELORA<span>.</span>
+    </div>
+
+    <nav>
+        <a href="#rooms">ROOMS</a>
+        <a href="#experience">EXPERIENCE</a>
+        <a href="#gallery">GALLERY</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <small>LUXURY HOTEL & RESORT</small>
+
+        <h1>
+            Stay Beyond
+            <br>
+            Expectations.
+        </h1>
+
+        <p>
+            Experience timeless luxury, breathtaking views
+            and exceptional hospitality at Velora Hotel.
+        </p>
+
+        <a href="#rooms" class="hero-btn">
+            EXPLORE ROOMS
+        </a>
+
+    </div>
+
+
+    <!-- BOOKING -->
+
+    <div class="booking">
+
+        <div>
+            <label>CHECK IN</label>
+            <input type="date" id="checkin">
+        </div>
+
+        <div>
+            <label>CHECK OUT</label>
+            <input type="date" id="checkout">
+        </div>
+
+        <div>
+            <label>GUESTS</label>
+
+            <select id="guests">
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+            </select>
+
+        </div>
+
+        <button onclick="searchRooms()">
+            CHECK AVAILABILITY
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ROOMS -->
+
+<section class="section" id="rooms">
+
+    <div class="section-title">
+
+        <small>STAY WITH US</small>
+
+        <h2>Our Rooms</h2>
+
+    </div>
+
+
+    <div class="rooms">
+
+
+        <div class="room">
+
+            <div class="room-img">
+
+                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900">
+
+            </div>
+
+            <div class="room-info">
+
+                <h3>Deluxe Room</h3>
+
+                <p>
+                    Elegant room with modern design,
+                    king-size bed and city view.
+                </p>
+ <div class="price">
+                    $180 / night
+                </div>
+
+                <div class="details-btn"
+                onclick="openRoom(
+                'Deluxe Room',
+                '$180 / night',
+                'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900',
+                'Elegant room with a king-size bed, private bathroom and beautiful city views.'
+                )">
+                    VIEW DETAILS
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="room">
+
+            <div class="room-img">
+
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900">
+
+            </div>
+
+            <div class="room-info">
+
+                <h3>Luxury Suite</h3>
+
+                <p>
+                    Spacious luxury suite with living area
+                    and panoramic views.
+                </p>
+
+                <div class="price">
+                    $320 / night
+                </div>
+
+                <div class="details-btn"
+                onclick="openRoom(
+                'Luxury Suite',
+                '$320 / night',
+                'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900',
+                'A premium suite featuring a spacious living area, luxury bathroom and panoramic views.'
+                )">
+                    VIEW DETAILS
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="room">
+
+            <div class="room-img">
+
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=900">
+
+            </div>
+
+            <div class="room-info">
+
+                <h3>Royal Suite</h3>
+
+                <p>
+                    The ultimate luxury experience with
+                    private lounge and premium services.
+                </p>
+
+                <div class="price">
+                    $520 / night
+                </div>
+
+                <div class="details-btn"
+                onclick="openRoom(
+                'Royal Suite',
+                '$520 / night',
+                'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=900',
+                'Our most exclusive suite with a private lounge, premium furniture and luxury services.'
+                )">
+                    VIEW DETAILS
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="section" id="experience">
+
+    <div class="experience">
+
+        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1000">
+
+        <div class="experience-text">
+
+            <small>THE VELORA EXPERIENCE</small>
+
+            <h2>
+                Luxury Made
+                Personal.
+            </h2>
+
+            <p>
+                From the moment you arrive, every detail is
+                designed to make your stay unforgettable.
+                Relax by the pool, enjoy world-class dining
+                and experience hospitality at its finest.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <span>♨</span>
+                    <br>
+                    Luxury Spa
+                </div>
+
+                <div class="feature">
+                    <span>♨</span>
+                    <br>
+                    Infinity Pool
+                </div>
+
+                <div class="feature">
+                    <span>✦</span>
+                    <br>
+                    Fine Dining
+                </div>
+
+                <div class="feature">
+                    <span>★</span>
+                    <br>
+                    24/7 Service
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="section" id="gallery">
+
+    <div class="section-title">
+
+        <small>VISUAL JOURNEY</small>
+
+        <h2>Hotel Gallery</h2>
+
+    </div>
+
+
+    <div class="gallery">
+ <img onclick="openImage(this.src)"
+        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1000">
+
+        <img onclick="openImage(this.src)"
+        src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800">
+
+        <img onclick="openImage(this.src)"
+        src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800">
+
+        <img onclick="openImage(this.src)"
+        src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800">
+
+        <img onclick="openImage(this.src)"
+        src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800">
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    VELORA HOTEL © 2026
+    <br><br>
+    Luxury • Comfort • Experience
+
+</footer>
+
+
+<!-- ROOM MODAL -->
+
+<div class="modal" id="roomModal">
+
+    <div class="modal-box">
+
+        <span class="close"
+        onclick="closeRoom()">×</span>
+
+        <img id="roomImage">
+
+        <h2 id="roomName"></h2>
+
+        <p id="roomDescription"></p>
+
+        <h3 id="roomPrice"
+        style="color:#d4af37;margin-top:15px;">
+        </h3>
+
+        <button class="book-now"
+        onclick="bookRoom()">
+            BOOK THIS ROOM
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- IMAGE MODAL -->
+
+<div class="modal" id="imageModal">
+
+    <div class="modal-box">
+
+        <span class="close"
+        onclick="closeImage()">×</span>
+
+        <img id="bigImage">
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openRoom(name,price,image,description){
+
+    document.getElementById("roomModal")
+    .classList.add("active");
+
+    document.getElementById("roomName")
+    .innerText=name;
+
+    document.getElementById("roomPrice")
+    .innerText=price;
+
+    document.getElementById("roomImage")
+    .src=image;
+
+    document.getElementById("roomDescription")
+    .innerText=description;
+
+}
+
+
+function closeRoom(){
+
+    document.getElementById("roomModal")
+    .classList.remove("active");
+
+}
+
+
+function bookRoom(){
+
+    alert(
+        "Booking request submitted successfully! 🏨\n\nThis is a demo project."
+    );
+
+}
+
+
+function searchRooms(){
+
+    const checkin =
+        document.getElementById("checkin").value;
+
+    const checkout =
+        document.getElementById("checkout").value;
+
+    if(!checkin || !checkout){
+
+        alert("Please select check-in and check-out dates.");
+
+        return;
+    }
+
+    alert(
+        "Rooms are available! ✨\n\n" +
+        "Check-in: " + checkin +
+        "\nCheck-out: " + checkout
+    );
+
+}
+
+
+function openImage(src){
+
+    document.getElementById("imageModal")
+    .classList.add("active");
+
+    document.getElementById("bigImage")
+    .src=src;
+
+}
+
+
+function closeImage(){
+
+    document.getElementById("imageModal")
+    .classList.remove("active");
+
+}
+
+
+/* Close when clicking outside */
+
+document.querySelectorAll(".modal")
+.forEach(modal=>{
+
+    modal.addEventListener("click",function(e){
+
+        if(e.target === modal){
+
+            modal.classList.remove("active");
+
+        }
+
+    });
+
+});
+
+
+/* ESC */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape"){
+
+        document.querySelectorAll(".modal")
+        .forEach(m=>m.classList.remove("active"));
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,4046 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Hossam Mahmoud — Information Systems Graduate, Web Developer and Technology Enthusiast.">
+
+<meta name="keywords"
+      content="Hossam Mahmoud, Information Systems, Web Developer, HTML, CSS, JavaScript, Python, SQL">
+
+<meta name="author"
+      content="Hossam Mahmoud">
+
+<title>Hossam Mahmoud | Information Systems & Web Developer</title>
+
+
+<!-- =========================
+     GOOGLE FONTS
+========================= -->
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet">
+
+
+<!-- =========================
+     FONT AWESOME
+========================= -->
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --bg:#060708;
+
+    --bg-soft:#0b0d0f;
+
+    --card:#0d1012;
+
+    --card-light:#111416;
+
+    --border:#1c2023;
+
+    --text:#ffffff;
+
+    --muted:#777d80;
+
+    --muted-light:#9aa0a3;
+
+    --green:#00ffaa;
+
+    --green-dark:#00c98a;
+
+    --blue:#5d8cff;
+
+    --purple:#8b5cf6;
+
+    --yellow:#ffd43b;
+
+    --shadow:
+    0 30px 80px rgba(0,0,0,.45);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+    scroll-padding-top:100px;
+
+}
+
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    line-height:1.5;
+
+}
+
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        circle at 75% 15%,
+        rgba(0,255,170,.12),
+        transparent 28%
+    ),
+
+    radial-gradient(
+        circle at 10% 65%,
+        rgba(91,92,246,.08),
+        transparent 30%
+    );
+
+    pointer-events:none;
+
+    z-index:-10;
+
+}
+
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        transparent 35%,
+        rgba(0,0,0,.45)
+    );
+
+    pointer-events:none;
+
+    z-index:-9;
+
+}
+
+
+::selection{
+
+    background:var(--green);
+
+    color:#00150d;
+
+}
+
+
+a{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+
+button,
+input,
+textarea{
+
+    font:inherit;
+
+}
+
+
+/* =========================================================
+   GRID BACKGROUND
+========================================================= */
+
+.grid{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(
+        rgba(255,255,255,.025) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,.025) 1px,
+        transparent 1px
+    );
+
+    background-size:65px 65px;
+
+    mask-image:
+    linear-gradient(
+        to bottom,
+        black,
+        transparent 90%
+    );
+
+    pointer-events:none;
+
+    z-index:-8;
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav{
+
+    position:fixed;
+
+    top:22px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(1180px,92%);
+
+    padding:14px 18px 14px 22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(8,10,11,.72);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    z-index:1000;
+
+    box-shadow:
+    0 15px 50px rgba(0,0,0,.25);
+
+}
+
+
+.logo{
+
+    font-size:20px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+}
+
+
+.logo span{
+
+    color:var(--green);
+
+}
+
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+}
+
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:27px;
+
+}
+
+
+nav a{
+
+    color:#85898c;
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+nav ul a:hover{
+
+    color:var(--green);
+
+}
+
+
+.nav-cv{
+
+    padding:9px 14px;
+
+    border:1px solid rgba(0,255,170,.25);
+
+    border-radius:9px;
+
+    color:var(--green)!important;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    width:min(1180px,92%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:50px;
+
+    padding-top:80px;
+
+    position:relative;
+
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+
+.mini-title{
+
+    color:var(--green);
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    font-weight:700;
+
+    margin-bottom:24px;
+
+}
+
+
+.hero h1{
+
+    font-size:clamp(58px,8vw,108px);
+
+    line-height:.85;
+
+    font-weight:900;
+
+    letter-spacing:-6px;
+
+}
+
+
+.hero h1 span{
+
+    color:transparent;
+
+    -webkit-text-stroke:1px rgba(255,255,255,.85);
+
+}
+
+
+.hero-text{
+
+    margin-top:30px;
+
+    max-width:570px;
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+    font-size:14px;
+
+}
+
+
+.typing{
+
+    color:var(--green);
+
+    font-weight:700;
+
+}
+
+
+.typing::after{
+
+    content:"|";
+
+    margin-left:4px;
+
+    animation:blink .7s infinite;
+
+}
+
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+
+.hero-role{
+
+    margin-top:20px;
+
+    font-size:14px;
+
+    color:#aaa;
+
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:11px;
+
+    margin-top:31px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.btn{
+
+    padding:14px 20px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:.4px;
+
+    transition:.35s;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+}
+
+
+.btn-main{
+
+    background:var(--green);
+
+    color:#00150d;
+
+    box-shadow:
+    0 10px 30px rgba(0,255,170,.12);
+
+}
+
+
+.btn-outline{
+
+    border:1px solid #292d30;
+
+    color:#fff;
+
+    background:rgba(255,255,255,.015);
+
+}
+
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+.btn-main:hover{
+
+    box-shadow:
+    0 15px 40px rgba(0,255,170,.25);
+
+}
+
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.hero-stats{
+
+    display:flex;
+
+    gap:32px;
+
+    margin-top:42px;
+
+}
+
+
+.hero-stat{
+
+    position:relative;
+
+}
+
+
+.hero-stat:not(:last-child)::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-17px;
+
+    top:3px;
+
+    height:35px;
+
+    width:1px;
+
+    background:#24282b;
+
+}
+
+
+.hero-stat strong{
+
+    display:block;
+
+    font-size:21px;
+
+    font-weight:800;
+
+}
+
+
+.hero-stat span{
+
+    display:block;
+
+    color:#5f6467;
+
+    font-size:9px;
+
+    margin-top:3px;
+
+    letter-spacing:.5px;
+
+}
+
+
+/* =========================================================
+   CODE SCENE
+========================================================= */
+
+.code-scene{
+
+    height:650px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.code-orbit{
+
+    width:440px;
+
+    height:440px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(0,255,170,.14);
+
+    position:absolute;
+
+    animation:orbit 15s linear infinite;
+
+}
+
+
+.code-orbit::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:35px;
+
+    border-radius:50%;
+
+    border:1px dashed rgba(0,255,170,.12);
+
+}
+
+
+.code-orbit::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:7px;
+
+    height:7px;
+
+    background:var(--green);
+
+    border-radius:50%;
+
+    top:30px;
+
+    left:50%;
+
+    box-shadow:
+    0 0 20px var(--green);
+
+}
+
+
+@keyframes orbit{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+.profile-wrapper{
+
+    width:440px;
+
+    height:440px;
+
+    display:flex;
+
+    align-items:end;
+
+    justify-content:center;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+
+.profile{
+
+    width:100%;
+
+    max-height:100%;
+
+    object-fit:cover;
+    border-radius:50% ;
+
+    filter:
+    drop-shadow(
+        0 25px 50px rgba(0,0,0,.8)
+    )
+    drop-shadow(
+        0 0 35px rgba(0,255,170,.08)
+    );
+
+    animation:profileFloat 5s ease-in-out infinite;
+
+    transition:.2s;
+
+}
+
+
+@keyframes profileFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+
+/* =========================================================
+   CODE CARDS
+========================================================= */
+
+.code-card{
+
+    position:absolute;
+
+    z-index:8;
+
+    width:220px;
+
+    background:rgba(12,14,15,.82);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.09);
+
+    border-radius:14px;
+
+    padding:15px;
+
+    font-family:"Fira Code",monospace;
+
+    font-size:9px;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.45);
+
+    animation:codeFloat 5s ease-in-out infinite;
+
+}
+
+
+.code-card .top{
+
+    display:flex;
+
+    gap:5px;
+
+    margin-bottom:10px;
+
+}
+
+
+.dot{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:#444;
+
+}
+
+
+.code-line{
+
+    line-height:1.8;
+
+    color:#777;
+
+}
+
+
+.code-green{
+
+    color:var(--green);
+
+}
+
+
+.code-blue{
+
+    color:#8a9cff;
+
+}
+
+
+.card-code-one{
+
+    top:7%;
+
+    left:-5%;
+
+}
+
+
+.card-code-two{
+
+    bottom:9%;
+
+    right:-5%;
+
+    animation-delay:1.5s;
+
+}
+
+
+@keyframes codeFloat{
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+
+/* =========================================================
+   TECH TAGS
+========================================================= */
+
+.tech{
+
+    position:absolute;
+
+    padding:9px 13px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(10,10,11,.72);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:8px;
+
+    font-family:"Fira Code",monospace;
+
+    font-size:9px;
+
+    color:#777;
+
+    z-index:10;
+
+}
+
+
+.tech.html{
+
+    top:17%;
+
+    right:0;
+
+    color:#ff7043;
+
+}
+
+
+.tech.css{
+
+    bottom:20%;
+
+    left:0;
+
+    color:#5b8cff;
+
+}
+
+
+.tech.js{
+
+    top:44%;
+
+    right:-3%;
+
+    color:#ffd43b;
+
+}
+
+
+.tech.python{
+
+    bottom:8%;
+
+    left:18%;
+
+    color:#5ddcff;
+
+}
+
+
+.tech.sql{
+
+    top:27%;
+
+    left:4%;
+
+    color:#c084fc;
+
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#414548;
+
+    font-size:8px;
+
+    letter-spacing:4px;
+
+}
+
+
+.scroll-indicator::after{
+
+    content:"";
+
+    display:block;
+
+    width:1px;
+
+    height:35px;
+
+    margin:10px auto 0;
+
+    background:
+    linear-gradient(
+        var(--green),
+        transparent
+    );
+
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section{
+
+    width:min(1180px,92%);
+
+    margin:auto;
+
+    padding:120px 0;
+
+}
+
+
+.section-label{
+
+    color:var(--green);
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+
+.section-title{
+
+    font-size:clamp(40px,6vw,72px);
+
+    line-height:1;
+
+    margin-bottom:55px;
+
+    letter-spacing:-4px;
+
+    font-weight:900;
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+
+}
+
+
+.about-box{
+
+    padding:38px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #101315,
+        #0b0d0f
+    );
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.about-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+
+    height:150px;
+
+    right:-80px;
+
+    top:-80px;
+
+    background:var(--green);
+
+    filter:blur(80px);
+
+    opacity:.03;
+
+}
+
+
+.about-box:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(0,255,170,.45);
+
+}
+
+
+.about-icon{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--green);
+
+    border:1px solid #22272a;
+
+    margin-bottom:25px;
+
+}
+
+
+.about-box h3{
+
+    font-size:24px;
+
+    margin-bottom:16px;
+
+}
+
+
+.about-box p{
+
+    color:#777;
+
+    line-height:1.9;
+
+    font-size:13px;
+
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+
+}
+
+
+.skill{
+
+    padding:27px;
+
+    background:#0c0e0f;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.skill:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(0,255,170,.5);
+
+}
+
+
+.skill-number{
+
+    color:var(--green);
+
+    font-family:"Fira Code";
+
+    font-size:9px;
+
+}
+
+
+.skill-icon{
+
+    position:absolute;
+
+    right:25px;
+
+    top:24px;
+
+    color:#31373a;
+
+    font-size:24px;
+
+    transition:.3s;
+
+}
+
+
+.skill:hover .skill-icon{
+
+    color:var(--green);
+
+    transform:scale(1.1);
+
+}
+
+
+.skill h3{
+
+    margin-top:30px;
+
+    font-size:19px;
+
+}
+
+
+.skill p{
+
+    color:#666;
+
+    font-size:11px;
+
+    margin-top:8px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+
+.project{
+
+    min-height:350px;
+
+    padding:32px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    border:1px solid #1d2123;
+
+    background:
+    linear-gradient(
+        145deg,
+        #111416,
+        #08090a
+    );
+
+    transition:.25s;
+
+    transform-style:preserve-3d;
+
+}
+
+
+.project::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+
+    height:280px;
+
+    right:-150px;
+
+    bottom:-150px;
+
+    background:var(--green);
+
+    filter:blur(100px);
+
+    opacity:.04;
+
+    transition:.4s;
+
+}
+
+
+.project:hover{
+
+    border-color:rgba(0,255,170,.55);
+
+}
+
+
+.project:hover::before{
+
+    opacity:.16;
+
+}
+
+
+.project-number{
+
+    font-family:"Fira Code";
+
+    font-size:9px;
+
+    color:#555;
+
+}
+
+
+.project-icon{
+
+    position:absolute;
+
+    top:29px;
+
+    right:30px;
+
+    width:45px;
+
+    height:45px;
+
+    border:1px solid #252a2d;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--green);
+
+    background:#0a0c0d;
+
+}
+
+
+.project h3{
+
+    margin-top:75px;
+
+    font-size:28px;
+
+}
+
+
+.project p{
+
+    color:#777;
+
+    margin-top:12px;
+
+    line-height:1.8;
+
+    font-size:12px;
+
+    max-width:500px;
+
+}
+
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-top:22px;
+
+}
+
+
+.tag{
+
+    padding:6px 10px;
+
+    border:1px solid #24282a;
+
+    border-radius:20px;
+
+    color:#777;
+
+    font-size:8px;
+
+}
+
+
+.project-links{
+
+    position:absolute;
+
+    left:32px;
+
+    bottom:28px;
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+.project-link{
+
+    color:var(--green);
+
+    text-decoration:none;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+
+.project-link:hover{
+
+    transform:translateX(4px);
+
+}
+
+
+.project-link.github{
+
+    color:#aaa;
+
+}
+
+
+/* =========================================================
+   JOURNEY
+========================================================= */
+
+.timeline{
+
+    border-left:1px solid #24282a;
+
+    margin-left:6px;
+
+}
+
+
+.timeline-item{
+
+    padding:
+    0 0 48px 32px;
+
+    position:relative;
+
+}
+
+
+.timeline-item:last-child{
+
+    padding-bottom:0;
+
+}
+
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-5px;
+
+    top:3px;
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    box-shadow:
+    0 0 20px rgba(0,255,170,.55);
+
+}
+
+
+.timeline-item span{
+
+    color:var(--green);
+
+    font-family:"Fira Code";
+
+    font-size:9px;
+
+}
+
+
+.timeline-item h3{
+
+    margin:9px 0;
+
+    font-size:22px;
+
+}
+
+
+.timeline-item p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    font-size:12px;
+
+    max-width:650px;
+
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section{
+
+    padding-bottom:100px;
+
+}
+
+
+.contact-layout{
+
+    display:grid;
+
+    grid-template-columns:
+    1.35fr .8fr;
+
+    gap:18px;
+
+    align-items:stretch;
+
+}
+
+
+/* FORM */
+
+.contact-form{
+
+    padding:38px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #111318,
+        #090a0d
+    );
+
+    border:1px solid #202329;
+
+    border-radius:24px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.contact-form::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    right:-150px;
+
+    top:-150px;
+
+    background:var(--green);
+
+    filter:blur(120px);
+
+    opacity:.06;
+
+}
+
+
+.form-title{
+
+    font-size:25px;
+
+    font-weight:800;
+
+    margin-bottom:9px;
+
+    position:relative;
+
+}
+
+
+.form-subtitle{
+
+    color:#666;
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    margin-bottom:28px;
+
+    position:relative;
+
+}
+
+
+.input-group{
+
+    margin-bottom:13px;
+
+    position:relative;
+
+}
+
+
+.input-group input,
+.input-group textarea{
+
+    width:100%;
+
+    padding:17px 19px;
+
+    background:#08090d;
+
+    border:1px solid #25282d;
+
+    border-radius:14px;
+
+    color:#fff;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:12px;
+
+    outline:none;
+
+    transition:.3s;
+
+    direction:ltr;
+
+    text-align:left;
+
+}
+
+
+.input-group input{
+
+    height:56px;
+
+}
+
+
+.input-group textarea{
+
+    height:140px;
+
+    resize:none;
+
+}
+
+
+.input-group input::placeholder,
+.input-group textarea::placeholder{
+
+    color:#5e6367;
+
+}
+
+
+.input-group input:focus,
+.input-group textarea:focus{
+
+    border-color:var(--green);
+
+    box-shadow:
+    0 0 0 3px rgba(0,255,170,.04);
+
+}
+
+
+/* WHATSAPP */
+
+.whatsapp-btn{
+
+    width:100%;
+
+    padding:16px 22px;
+
+    margin-top:5px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #8b4dff,
+        #00cfa5,
+        #08aeea
+    );
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    font-family:"Inter",sans-serif;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    transition:.35s;
+
+    box-shadow:
+    0 15px 35px rgba(0,190,255,.10);
+
+}
+
+
+.whatsapp-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 20px 45px rgba(0,255,170,.18);
+
+}
+
+
+.whatsapp-icon{
+
+    font-size:20px;
+
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.social-box{
+
+    padding:38px;
+
+    background:#0d0f10;
+
+    border:1px solid #1c1e20;
+
+    border-radius:24px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+.social-title{
+
+    font-size:25px;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+
+}
+
+
+.social-box > p{
+
+    color:#666;
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    margin-bottom:24px;
+
+}
+
+
+.socials{
+
+    display:grid;
+
+    gap:10px;
+
+}
+
+
+.social{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #222;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#090b0d;
+
+    transition:.35s;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+}
+
+
+.social:hover{
+
+    transform:translateX(6px);
+
+    border-color:rgba(0,255,170,.5);
+
+}
+
+
+.social-icon{
+
+    width:40px;
+
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:11px;
+
+    font-size:18px;
+
+    color:#00cfff;
+
+    border:1px solid #20242a;
+
+}
+
+
+.social strong{
+
+    display:block;
+
+    font-size:12px;
+
+}
+
+
+.social small{
+
+    display:block;
+
+    color:#666;
+
+    margin-top:3px;
+
+    font-size:9px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:30px;
+
+    border-top:1px solid #151719;
+
+    text-align:center;
+
+    color:#444;
+
+    font-size:9px;
+
+}
+
+
+footer span{
+
+    color:var(--green);
+
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(45px);
+
+    transition:
+    opacity 1s ease,
+    transform 1s ease;
+
+}
+
+
+.reveal.show{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+.mobile-menu{
+
+    display:none;
+
+    width:38px;
+
+    height:38px;
+
+    border:1px solid #292d30;
+
+    background:#0b0d0f;
+
+    color:#fff;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+
+.mobile-menu i{
+
+    font-size:14px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+    nav ul{
+
+        display:none;
+
+    }
+
+
+    .nav-right{
+
+        gap:8px;
+
+    }
+
+
+    .mobile-menu{
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+    }
+
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        padding-top:135px;
+
+    }
+
+
+    .hero-text{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+
+    .hero-stats{
+
+        justify-content:center;
+
+    }
+
+
+    .code-scene{
+
+        height:530px;
+
+        margin-top:15px;
+
+    }
+
+
+    .profile-wrapper{
+
+        width:340px;
+
+        height:430px;
+
+    }
+
+
+    .code-orbit{
+
+        width:350px;
+
+        height:350px;
+
+    }
+
+
+    .code-card{
+
+        width:180px;
+
+        font-size:8px;
+
+    }
+
+
+    .card-code-one{
+
+        left:0;
+
+    }
+
+
+    .card-code-two{
+
+        right:0;
+
+    }
+
+
+    .tech.js{
+
+        right:0;
+
+    }
+
+
+    .tech.html{
+
+        right:0;
+
+    }
+
+
+    .tech.sql{
+
+        left:0;
+
+    }
+
+
+    .about-grid,
+    .projects{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .skills{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+
+    .contact-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:500px){
+
+    nav{
+
+        top:12px;
+
+    }
+
+
+    .nav-cv{
+
+        display:none;
+
+    }
+
+
+    .hero{
+
+        padding-top:125px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:58px;
+
+        letter-spacing:-4px;
+
+    }
+
+
+    .hero-text{
+
+        font-size:13px;
+
+    }
+
+
+    .hero-stats{
+
+        gap:24px;
+
+    }
+
+
+    .hero-stat:not(:last-child)::after{
+
+        right:-13px;
+
+    }
+
+
+    .code-scene{
+
+        height:450px;
+
+    }
+
+
+    .profile-wrapper{
+
+        width:290px;
+
+        height:370px;
+
+    }
+
+
+    .code-orbit{
+
+        width:290px;
+
+        height:290px;
+
+    }
+
+
+    .code-card{
+
+        width:145px;
+
+        padding:9px;
+
+        font-size:7px;
+
+    }
+
+
+    .tech{
+
+        font-size:7px;
+
+        padding:7px 9px;
+
+    }
+
+
+    .tech.python{
+
+        left:8%;
+
+    }
+
+
+    .skills{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .section-title{
+
+        letter-spacing:-3px;
+
+    }
+
+
+    .about-box{
+
+        padding:27px;
+
+    }
+
+
+    .project{
+
+        min-height:370px;
+
+        padding:27px;
+
+    }
+
+
+    .project-links{
+
+        left:27px;
+
+    }
+
+
+    .contact-form{
+
+        padding:23px;
+
+    }
+
+
+    .social-box{
+
+        padding:23px;
+
+    }
+
+
+    .form-title{
+
+        font-size:21px;
+
+    }
+
+
+    .input-group input{
+
+        height:54px;
+
+    }
+
+
+    .input-group textarea{
+
+        height:125px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+
+        scroll-behavior:auto;
+
+    }
+
+    *{
+
+        animation-duration:.01ms!important;
+
+        animation-iteration-count:1!important;
+
+        transition-duration:.01ms!important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="grid"></div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav>
+
+    <a href="#home" class="logo">
+        H<span>M</span>
+    </a>
+
+    <div class="nav-right">
+
+        <ul>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#journey">Journey</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+        <a
+            href="Hossam-Mahmoud-CV.pdf"
+            class="nav-cv"
+            download
+        >
+            CV
+        </a>
+
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open menu"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero" id="home">
+
+
+    <div class="hero-content">
+
+
+        <div class="mini-title">
+            INFORMATION SYSTEMS • WEB DEVELOPER
+        </div>
+
+
+        <h1>
+
+            HOSSAM<br>
+
+            <span>MAHMOUD</span>
+
+        </h1>
+
+
+        <p class="hero-text">
+
+            I build modern digital experiences and practical
+            technology solutions by combining Information Systems,
+            programming and creative web development.
+
+        </p>
+
+
+        <div class="hero-role">
+
+            I am a
+
+            <span
+                class="typing"
+                id="typing"
+            ></span>
+
+        </div>
+
+
+        <div class="hero-buttons">
+
+
+            <a
+                href="#projects"
+                class="btn btn-main"
+            >
+
+                EXPLORE MY WORK
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="Hossam-Mahmoud-CV.pdf"
+                class="btn btn-outline"
+                download
+            >
+
+                DOWNLOAD CV
+
+                <i class="fa-solid fa-download"></i>
+
+            </a>
+
+
+            <a
+                href="#contact"
+                class="btn btn-outline"
+            >
+
+                LET'S CONNECT
+
+            </a>
+
+
+        </div>
+
+
+        <div class="hero-stats">
+
+
+            <div class="hero-stat">
+
+                <strong>6+</strong>
+
+                <span>PROJECTS</span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <strong>6+</strong>
+
+                <span>TECHNOLOGIES</span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <strong>2026</strong>
+
+                <span>GRADUATE</span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =================================================
+         CODE SCENE
+    ================================================== -->
+
+    <div class="code-scene">
+
+
+        <div class="code-orbit"></div>
+
+
+        <div class="profile-wrapper">
+
+            <!--
+                Put your image here:
+                profile.png
+            -->
+
+            <img
+                src="hossam.jpg"
+                alt="Hossam Mahmoud"
+                class="profile"
+            >
+
+        </div>
+
+
+        <!-- CODE CARD -->
+
+        <div class="code-card card-code-one">
+
+            <div class="top">
+
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+
+            </div>
+
+
+            <div class="code-line">
+
+                <span class="code-blue">
+                    const
+                </span>
+
+                developer = {
+
+            </div>
+
+
+            <div class="code-line">
+
+                name:
+
+                <span class="code-green">
+                    "Hossam"
+                </span>,
+
+            </div>
+
+
+            <div class="code-line">
+
+                field:
+
+                <span class="code-green">
+                    "Information Systems"
+                </span>,
+
+            </div>
+
+
+            <div class="code-line">
+
+                focus:
+
+                <span class="code-green">
+                    "Technology"
+                </span>
+
+            </div>
+
+
+            <div class="code-line">
+
+                };
+
+            </div>
+
+        </div>
+
+
+        <!-- SECOND CODE CARD -->
+
+        <div class="code-card card-code-two">
+
+            <div class="top">
+
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+
+            </div>
+
+
+            <div class="code-line">
+
+                <span class="code-blue">
+                    function
+                </span>
+
+                buildFuture(){
+
+            </div>
+
+
+            <div class="code-line">
+                create();
+            </div>
+
+
+            <div class="code-line">
+                learn();
+            </div>
+
+
+            <div class="code-line">
+                innovate();
+            </div>
+
+
+            <div class="code-line">
+                }
+            </div>
+
+        </div>
+
+
+        <!-- TECH TAGS -->
+
+        <div class="tech html">
+            &lt;HTML /&gt;
+        </div>
+
+
+        <div class="tech css">
+            #CSS
+        </div>
+
+
+        <div class="tech js">
+            JS
+        </div>
+
+
+        <div class="tech python">
+            Python
+        </div>
+
+
+        <div class="tech sql">
+            SQL
+        </div>
+
+
+    </div>
+
+
+    <div class="scroll-indicator">
+
+        SCROLL TO EXPLORE
+
+    </div>
+
+
+</header>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    id="about"
+    class="reveal"
+>
+
+
+    <div class="section-label">
+        01 / ABOUT ME
+    </div>
+
+
+    <h2 class="section-title">
+
+        Turning ideas<br>
+        into digital solutions.
+
+    </h2>
+
+
+    <div class="about-grid">
+
+
+        <div class="about-box">
+
+
+            <div class="about-icon">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+
+            <h3>
+                Who I Am
+            </h3>
+
+
+            <p>
+
+                I'm Hossam Mahmoud, an Information Systems graduate
+                passionate about technology, programming and modern
+                web development.
+
+                <br><br>
+
+                I enjoy learning how technology and business can work
+                together to create useful and practical digital
+                solutions.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="about-box">
+
+
+            <div class="about-icon">
+
+                <i class="fa-solid fa-code"></i>
+
+            </div>
+
+
+            <h3>
+                What I Do
+            </h3>
+
+
+            <p>
+
+                I create responsive websites, dashboards and
+                practical digital systems using modern frontend
+                technologies and programming concepts.
+
+                <br><br>
+
+                My focus is simple: clean interfaces, useful
+                functionality and continuous improvement.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section
+    id="skills"
+    class="reveal"
+>
+
+
+    <div class="section-label">
+        02 / SKILLS
+    </div>
+
+
+    <h2 class="section-title">
+        My tech stack.
+    </h2>
+
+
+    <div class="skills">
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                01
+            </span>
+
+            <i class="fa-brands fa-html5 skill-icon"></i>
+
+            <h3>
+                HTML
+            </h3>
+
+            <p>
+                Semantic and modern web structure.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                02
+            </span>
+
+            <i class="fa-brands fa-css3-alt skill-icon"></i>
+
+            <h3>
+                CSS
+            </h3>
+
+            <p>
+                Responsive and creative interfaces.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                03
+            </span>
+
+            <i class="fa-brands fa-js skill-icon"></i>
+
+            <h3>
+                JavaScript
+            </h3>
+
+            <p>
+                Interactive web experiences.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                04
+            </span>
+
+            <i class="fa-brands fa-python skill-icon"></i>
+
+            <h3>
+                Python
+            </h3>
+
+            <p>
+                Programming, logic and automation.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                05
+            </span>
+
+            <i class="fa-solid fa-database skill-icon"></i>
+
+            <h3>
+                SQL
+            </h3>
+
+            <p>
+                Databases and data management concepts.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                06
+            </span>
+
+            <i class="fa-brands fa-github skill-icon"></i>
+
+            <h3>
+                GitHub
+            </h3>
+
+            <p>
+                Version control and project deployment.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                07
+            </span>
+
+            <i class="fa-solid fa-network-wired skill-icon"></i>
+
+            <h3>
+                Information Systems
+            </h3>
+
+            <p>
+                Business and technology solutions.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                08
+            </span>
+
+            <i class="fa-solid fa-chart-line skill-icon"></i>
+
+            <h3>
+                Business Analysis
+            </h3>
+
+            <p>
+                Understanding data and business needs.
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <span class="skill-number">
+                09
+            </span>
+
+            <i class="fa-solid fa-lightbulb skill-icon"></i>
+
+            <h3>
+                Problem Solving
+            </h3>
+
+            <p>
+                Turning problems into practical solutions.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<div class="projects">
+
+  <!-- PROJECT 01 -->
+  <div class="project">
+    <span class="project-number">PROJECT 01</span>
+    <h3 class="project-title">Attendance System</h3>
+    <p class="project-desc">GPS-based attendance system with automatic check-in</p>
+    <a href="projects/Attendance-System.html/index.html" target="_blank" class="project-link">VIEW PROJECT</a>
+  </div>
+
+  <!-- PROJECT 02 -->
+  <div class="project">
+    <span class="project-number">PROJECT 02</span>
+    <h3 class="project-title">Business Dashboard</h3>
+    <p class="project-desc">Analytics dashboard for business KPIs and performance</p>
+    <a href="/projects/business-dashboard.html/index.html_blank" class="project-link">VIEW PROJECT</a>
+  </div>
+
+  <!-- PROJECT 03 -->
+  <div class="project">
+    <span class="project-number">PROJECT 03</span>
+    <h3 class="project-title">Task Manager</h3>
+    <p class="project-desc">Simple and responsive task management application</p>
+    <a href="projects/Task Flow Pro/index.htmL" target="_blank" class="project-link">VIEW PROJECT</a>
+  </div>
+
+  <!-- PROJECT 04 -->
+  <div class="project">
+    <span class="project-number">PROJECT 04</span>
+    <h3 class="project-title">Velora Hotel</h3>
+    <p class="project-desc">Hotel booking website with room reservation system</p>
+    <a href="projects/Velora hotel.html/index.html" target="_blank" class="project-link">VIEW PROJECT</a>
+  </div>
+
+  <!-- PROJECT 05 -->
+  <div class="project">
+    <span class="project-number">PROJECT 05</span>
+    <h3 class="project-title">Mini Store</h3>
+    <p class="project-desc">E-commerce store with shopping cart functionality</p>
+    <a href="projects/Store.html/index.html" target="_blank" class="project-link">VIEW PROJECT</a>
+  </div>
+
+  <!-- PROJECT 06 -->
+  <div class="project">
+    <span class="project-number">PROJECT 06</span>
+    <h3 class="project-title">PhysioCare Clinic</h3>
+    <p class="project-desc">Physiotherapy clinic website with appointment booking</p>
+    <a href="projects/engy/index.html" target="_blank" class="project-link">VIEW PROJECT</a>
+  </div>
+
+</div>             
+              
+
+
+
+</section>
+
+
+<!-- =====================================================
+     JOURNEY
+===================================================== -->
+
+<section
+    id="journey"
+    class="reveal"
+>
+
+
+    <div class="section-label">
+        04 / JOURNEY
+    </div>
+
+
+    <h2 class="section-title">
+        My journey.
+    </h2>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <span>
+                2022 — 2026
+            </span>
+
+            <h3>
+                Information Systems
+            </h3>
+
+            <p>
+
+                Studied Information Systems with a focus on
+                technology, business, programming and digital
+                solutions.
+
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <span>
+                2025
+            </span>
+
+            <h3>
+                Web Development
+            </h3>
+
+            <p>
+
+                Started building responsive websites, dashboards
+                and interactive frontend projects while developing
+                practical programming skills.
+
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <span>
+                2026
+            </span>
+
+            <h3>
+                Real Projects
+            </h3>
+
+            <p>
+
+                Building practical digital systems and expanding
+                knowledge across web development, databases and
+                Information Systems.
+
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <span>
+                NOW
+            </span>
+
+            <h3>
+                Keep Learning
+            </h3>
+
+            <p>
+
+                Continuously improving technical skills and
+                transforming ideas into useful digital experiences.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    id="contact"
+    class="contact-section reveal"
+>
+
+
+    <div class="section-label">
+        05 / LET'S CONNECT
+    </div>
+
+
+    <h2 class="section-title">
+
+        Let's work<br>
+        together.
+
+    </h2>
+
+
+    <div class="contact-layout">
+
+
+        <!-- CONTACT FORM -->
+
+        <div class="contact-form">
+
+
+            <div class="form-title">
+                Start a conversation
+            </div>
+
+
+            <p class="form-subtitle">
+
+                Have a project, idea or opportunity?
+                Send me a message directly on WhatsApp.
+
+            </p>
+
+
+            <form id="whatsappForm">
+
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Phone"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="Subject"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <textarea
+                        id="message"
+                        placeholder="Write your message..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="whatsapp-btn"
+                >
+
+                    <span>
+                        Send via WhatsApp
+                    </span>
+
+                    <span class="whatsapp-icon">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+
+        <!-- SOCIAL BOX -->
+
+        <div class="social-box">
+
+
+            <div class="social-title">
+                Find me online.
+            </div>
+
+
+            <p>
+
+                Connect with me through my professional
+                and social platforms.
+
+            </p>
+
+
+            <div class="socials">
+
+
+                <!-- LINKEDIN -->
+
+                <a
+                    href="https://www.linkedin.com/in/hossam-mahmoud-6bb5b8389/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social"
+                >
+
+                    <div class="social-icon">
+
+                        <i class="fa-brands fa-linkedin-in"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            LinkedIn
+                        </strong>
+
+                        <small>
+                            Professional profile
+                        </small>
+
+                    </div>
+
+                </a>
+
+
+                <!-- GITHUB -->
+
+                <!-- Replace # with your GitHub profile -->
+
+                <a
+                    href="https://github.com/hossammahmoud926-debug"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social"
+                >
+
+                    <div class="social-icon">
+
+                        <i class="fa-brands fa-github"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            GitHub
+                        </strong>
+
+                        <small>
+                            Projects & code
+                        </small>
+
+                    </div>
+
+                </a>
+
+
+                <!-- WHATSAPP -->
+
+                <a
+                    href="https://wa.me/201019786009"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social"
+                >
+
+                    <div class="social-icon">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            WhatsApp
+                        </strong>
+
+                        <small>
+                            Message me
+                        </small>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    © 2026 Hossam Mahmoud
+
+    —
+
+    Built with
+
+    <span>
+        code & creativity
+    </span>.
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   TYPING EFFECT
+========================================================= */
+
+const words = [
+
+    "Web Developer",
+
+    "Information Systems Graduate",
+
+    "Problem Solver",
+
+    "Tech Enthusiast"
+
+];
+
+
+let wordIndex = 0;
+
+let charIndex = 0;
+
+let deleting = false;
+
+const typing =
+document.getElementById("typing");
+
+
+function typeEffect(){
+
+    const word =
+    words[wordIndex];
+
+
+    if(!deleting){
+
+        typing.textContent =
+        word.substring(
+            0,
+            charIndex++
+        );
+
+
+        if(
+            charIndex >
+            word.length
+        ){
+
+            deleting = true;
+
+            setTimeout(
+                typeEffect,
+                1200
+            );
+
+            return;
+
+        }
+
+    }
+
+    else{
+
+        typing.textContent =
+        word.substring(
+            0,
+            charIndex--
+        );
+
+
+        if(
+            charIndex < 0
+        ){
+
+            charIndex = 0;
+
+            deleting = false;
+
+            wordIndex =
+            (
+                wordIndex + 1
+            )
+            %
+            words.length;
+
+        }
+
+    }
+
+
+    setTimeout(
+
+        typeEffect,
+
+        deleting
+        ? 45
+        : 80
+
+    );
+
+}
+
+
+typeEffect();
+
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const observer =
+
+new IntersectionObserver(
+
+    (entries)=>{
+
+        entries.forEach(
+
+            entry=>{
+
+                if(
+                    entry.isIntersecting
+                ){
+
+                    entry.target
+                    .classList
+                    .add("show");
+
+                }
+
+            }
+
+        );
+
+    },
+
+    {
+        threshold:.12
+    }
+
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(
+
+    element =>
+    observer.observe(element)
+
+);
+
+
+
+/* =========================================================
+   IMAGE PARALLAX
+========================================================= */
+
+const profile =
+document.querySelector(".profile");
+
+
+document.addEventListener(
+
+    "mousemove",
+
+    (e)=>{
+
+        if(
+            window.innerWidth <= 900
+        )
+            return;
+
+
+        const x =
+
+        (
+            window.innerWidth / 2
+            -
+            e.clientX
+        )
+        / 90;
+
+
+        const y =
+
+        (
+            window.innerHeight / 2
+            -
+            e.clientY
+        )
+        / 90;
+
+
+        profile.style.transform =
+
+        `translate(${x}px,${y}px)`;
+
+    }
+
+);
+
+
+
+/* =========================================================
+   PROJECT 3D EFFECT
+========================================================= */
+
+document
+.querySelectorAll(".project")
+.forEach(
+
+    card=>{
+
+
+        card.addEventListener(
+
+            "mousemove",
+
+            (e)=>{
+
+                if(
+                    window.innerWidth <= 900
+                )
+                    return;
+
+
+                const rect =
+                card.getBoundingClientRect();
+
+
+                const x =
+                e.clientX -
+                rect.left;
+
+
+                const y =
+                e.clientY -
+                rect.top;
+
+
+                const centerX =
+                rect.width / 2;
+
+
+                const centerY =
+                rect.height / 2;
+
+
+                const rotateX =
+                (y - centerY) / 22;
+
+
+                const rotateY =
+                (centerX - x) / 22;
+
+
+                card.style.transform =
+
+                `perspective(900px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateY(-7px)`;
+
+            }
+
+        );
+
+
+        card.addEventListener(
+
+            "mouseleave",
+
+            ()=>{
+
+                card.style.transform = "";
+
+            }
+
+        );
+
+    }
+
+);
+
+
+
+/* =========================================================
+   WHATSAPP CONTACT FORM
+========================================================= */
+
+const whatsappForm =
+document.getElementById(
+    "whatsappForm"
+);
+
+
+whatsappForm.addEventListener(
+
+    "submit",
+
+    function(e){
+
+        e.preventDefault();
+
+
+        const myWhatsAppNumber =
+        "201019786009";
+
+
+        const name =
+        document
+        .getElementById("name")
+        .value
+        .trim();
+
+
+        const phone =
+        document
+        .getElementById("phone")
+        .value
+        .trim();
+
+
+        const subject =
+        document
+        .getElementById("subject")
+        .value
+        .trim();
+
+
+        const message =
+        document
+        .getElementById("message")
+        .value
+        .trim();
+
+
+        const whatsappMessage =
+
+`Hello Hossam 👋
+
+Name:
+${name}
+
+Phone:
+${phone}
+
+Subject:
+${subject}
+
+Message:
+${message}`;
+
+
+        const whatsappURL =
+
+        "https://wa.me/" +
+
+        myWhatsAppNumber +
+
+        "?text=" +
+
+        encodeURIComponent(
+            whatsappMessage
+        );
+
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    }
+
+);
+
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const mobileMenu =
+document.getElementById(
+    "mobileMenu"
+);
+
+
+const navList =
+document.querySelector(
+    "nav ul"
+);
+
+
+mobileMenu.addEventListener(
+
+    "click",
+
+    ()=>{
+
+        const isOpen =
+        navList.style.display === "flex";
+
+
+        if(isOpen){
+
+            navList.style.display =
+            "none";
+
+        }
+
+        else{
+
+            navList.style.display =
+            "flex";
+
+            navList.style.position =
+            "absolute";
+
+            navList.style.top =
+            "70px";
+
+            navList.style.left =
+            "0";
+
+            navList.style.right =
+            "0";
+
+            navList.style.flexDirection =
+            "column";
+
+            navList.style.padding =
+            "20px";
+
+            navList.style.background =
+            "rgba(8,10,11,.96)";
+
+            navList.style.border =
+            "1px solid #222";
+
+            navList.style.borderRadius =
+            "15px";
+
+        }
+
+    }
+
+);
+
+
+/* Close mobile menu after click */
+
+document
+.querySelectorAll("nav ul a")
+.forEach(
+
+    link=>{
+
+        link.addEventListener(
+
+            "click",
+
+            ()=>{
+
+                if(
+                    window.innerWidth <= 900
+                ){
+
+                    navList.style.display =
+                    "none";
+
+                }
+
+            }
+
+        );
+
+    }
+
+);
+
+
+/* =========================================================
+   RESET MOBILE MENU ON RESIZE
+========================================================= */
+
+window.addEventListener(
+
+    "resize",
+
+    ()=>{
+
+        if(
+            window.innerWidth > 900
+        ){
+
+            navList.removeAttribute(
+                "style"
+            );
+
+        }
+
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>
